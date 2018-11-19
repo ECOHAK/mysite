@@ -1,0 +1,12 @@
+<ol>
+    {% for q in question %}
+        <li>
+            <!--<a href="/polls/{{ q.id }}">-->
+            <a href="{% url 'detail' q.id %}">
+            {{ q.id }} /
+            {{ q.question_text }}
+            </a>
+        </li>
+    {% endfor %}
+
+</ol>

@@ -1,0 +1,20 @@
+{{ question }}
+<br>
+<hr>
+<form action="/polls/{{ num }}/vote" method="post">
+    <input type ="submit">  <!-- submit 버튼 / 서버로 데이터를 전송-->
+
+    <!--서버와의 통신에 필요한
+       보안키(=토큰)-->
+    {% csrf_token %}
+
+    <ul>
+    {% for c in choice %}
+        <li>
+            <input type="radio" name="select"
+            value="{{ c.id }}">
+            {{ c.choice_text }}
+        </li>
+    {% endfor %}
+    </ul>
+</form>

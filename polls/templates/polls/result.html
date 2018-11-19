@@ -1,0 +1,6 @@
+질문 : q.question_text<br>
+답변 :
+{% for c in q.choice_set.all %}
+    {{ c.choice_text }} /
+    {{ c.votes }} <br>
+{% endfor %}
